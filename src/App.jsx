@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "./App.css";
 import Gallery from "./Gallery";
-import Explore from "./Explore.jsx";
+import Explore from "./Expore.jsx";
 import About from "./About.jsx";
+import ContactUs from "./contact.jsx";
 
 // ✅ Navbar Component
 function Navbar() {
@@ -13,7 +14,7 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="logo">🏛️ Virtual Museum</div>
+      <Link to="/" className="logo"onClick={() => setIsOpen(false)}>🏛️ Virtual Museum</Link>
       <div className={`nav-links ${isOpen ? "open" : ""}`}>
         <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
         <Link to="/explore" onClick={() => setIsOpen(false)}>Explore</Link>
@@ -43,19 +44,6 @@ function Home() {
 
 
 
-
-
-
-// ✅ Contact Page
-function Contact() {
-  return (
-    <div className="page">
-      <h2>Contact Us</h2>
-      <p>Reach out for inquiries, feedback, or collaboration opportunities.</p>
-    </div>
-  );
-}
-
 // ✅ Main App
 export default function App() {
   return (
@@ -66,7 +54,7 @@ export default function App() {
         <Route path="/explore" element={<Explore />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<ContactUs />} />
       </Routes>
     </Router>
   );

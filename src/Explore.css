@@ -1,0 +1,165 @@
+/* ================================
+   Explore Page Styling
+   Theme: Black, Yellow, White + Image Previews
+   ================================ */
+
+.explore-container {
+  padding: 3rem 2rem;
+  background: #000; /* Black background */
+  min-height: 100vh;
+  color: #fff;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.explore-container h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffd700; /* Gold yellow */
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: glow 2s infinite alternate;
+}
+
+.explore-container p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  color: #eaeaea;
+  line-height: 1.7;
+}
+
+/* Category Grid */
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Category Card */
+.explore-card {
+  position: relative;
+  border: 2px solid #ffd700;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #111;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Card Background Image */
+.explore-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.explore-card[data-bg="rijksmuseum"]::before {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/0c/Rijksmuseum_in_Amsterdam.jpg");
+}
+
+.explore-card[data-bg="cleveland"]::before {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a7/Cleveland_Museum_of_Art_-_panoramio.jpg");
+}
+
+.explore-card[data-bg="smithsonian"]::before {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e3/Smithsonian_Museum_Castle.jpg");
+}
+
+.explore-card[data-bg="artic"]::before {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/7c/Art_Institute_of_Chicago_%28Michigan_Avenue%29.jpg");
+}
+
+.explore-card[data-bg="harvard"]::before {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/f/f0/Harvard_Art_Museums%2C_Cambridge%2C_MA_-_2013-05-29.jpg");
+}
+
+.explore-card[data-bg="vangogh"]::before {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/54/Van_Gogh_Museum_Amsterdam.jpg");
+}
+
+.explore-card[data-bg="louvre"]::before {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/af/Louvre_Museum_Wikimedia_Commons.jpg");
+}
+
+/* Overlay for text readability */
+.explore-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.1));
+  z-index: 1;
+}
+
+/* Card Content */
+.explore-card h2,
+.explore-card p,
+.explore-btn {
+  position: relative;
+  z-index: 2;
+}
+
+.explore-card h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+}
+
+.explore-card p {
+  font-size: 0.95rem;
+  color: #f1f1f1;
+  margin-bottom: 1rem;
+}
+
+/* Hover Effects */
+.explore-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0px 12px 25px rgba(255, 215, 0, 0.4);
+}
+
+.explore-card:hover::before {
+  opacity: 0.45;
+}
+
+/* Explore Button */
+.explore-btn {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  border: 2px solid #ffd700;
+  border-radius: 25px;
+  background: transparent;
+  color: #ffd700;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+}
+
+.explore-btn:hover {
+  background: #ffd700;
+  color: #000;
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5);
+}
+
+/* Glow animation for heading */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #fff;
+  }
+  to {
+    text-shadow: 0 0 25px #ffd700, 0 0 40px #fff;
+  }
+}
