@@ -14,7 +14,7 @@ export default function Explore() {
     chicago: "https://api.artic.edu/api/v1/artworks",
     harvard: "https://api.harvardartmuseums.org/object?apikey=cc9d5369-8da2-44ce-b2e8-3790b275e9c0",
     vangogh: "https://api.vangoghmuseum.nl/v1/collection?key=YOUR_API_KEY",
-    louvre: "https://api-louvre.vercel.app/artworks" // unofficial open-source Louvre API
+    louvre: "https://api-louvre.vercel.app/artworks",
   };
 
   const fetchMuseumData = async (museum) => {
