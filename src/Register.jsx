@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate,Link } from "react-router-dom";
 
 const Register = () => {
   const [formData, setFormData] = useState({ name: "", email: "", password: "" });
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await axios.post("/api/auth/register", formData);
       alert("Registration successful!");
-      window.location.href = "/login";
+   navigate("/login");
     } catch {
       alert("Error registering user");
     }
@@ -24,7 +26,7 @@ const Register = () => {
         <input type="password" placeholder="Password" onChange={(e) => setFormData({ ...formData, password: e.target.value })} required />
         <button type="submit">Create Account</button>
         <p style={{ textAlign: "center" }}>
-          Already have an account? <a href="/login">Login</a>
+          Already have an account? <Link to="/login">Login</Link> 
         </p>
       </form>
     </div>
