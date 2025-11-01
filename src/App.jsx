@@ -10,7 +10,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import "./App.css";
 
 // Auth Imports
-import { AuthProvider } from "./Context/AuthContext.jsx";
+import { AuthProvider } from "./context/AuthContext.jsx";
 import PrivateRoute from "./utils/PrivateRoute";
 import Login from "./Login";
 import Register from "./Register";
